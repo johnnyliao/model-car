@@ -144,7 +144,7 @@ TEMPLATE_LOADERS = (
 
 AUTHENTICATION_BACKENDS = (
     "mezzanine.core.auth_backends.MezzanineBackend",
-    #"allauth.account.auth_backends.AuthenticationBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 )
 
 # List of finder classes that know how to find static files in
@@ -267,8 +267,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "mezzanine.conf.context_processors.settings",
 
     # allauth specific context processors
-    "allauth.account.context_processors.account",
-    "allauth.socialaccount.context_processors.socialaccount",
+    #"allauth.account.context_processors.account",
+    #"allauth.socialaccount.context_processors.socialaccount",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
@@ -435,12 +435,12 @@ ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_EMAIL_REQUIRED = False
 SOCIALACCOUNT_AUTO_SIGNUP = True
-
+"""
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
     'SCOPE': ['user_friends', 'public_profile', 'email', 'user_about_me'],
     'METHOD': 'oauth2',  # instead of 'oauth2'
     'VERSION': 'v2.5'
 }}
-
+"""
 LOGIN_REDIRECT_URL = '/admin'

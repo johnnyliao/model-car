@@ -1,6 +1,6 @@
 
 DEBUG = TEMPLATE_DEBUG = True
-
+"""
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
@@ -23,7 +23,6 @@ DATABASES = {
         "PORT": "3306",
     }
 }
-"""
 
 #http://www.johnnyliaotest.com:8000/account/facebook/login/?process=login
 
