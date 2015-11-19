@@ -10,6 +10,8 @@ admin.autodiscover()
 
 urlpatterns = patterns("",
     ("^admin/", include(admin.site.urls)),
+    url(r'^admin/salmonella/', include('salmonella.urls')),
+    url(r'^allauth/', include('allauth.urls')),
     url(r"^account/", include("account.urls")),
 
     url(r'^docs/', include('rest_framework_swagger.urls')),

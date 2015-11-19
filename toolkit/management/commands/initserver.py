@@ -7,12 +7,13 @@ import settings
 import random
 
 from mezzanine.utils.models import get_user_model
-User = get_user_model()
 
 from autofixture import AutoFixture
 
 from django.contrib.sites.models import Site
 from django.contrib.contenttypes.models import ContentType
+
+from datetime import datetime, timedelta
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
@@ -44,4 +45,5 @@ class Command(BaseCommand):
         site = Site.objects.get_current()
         site.domain = 'http://127.0.0.1:8000/'
         site.save()
+
 

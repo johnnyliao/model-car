@@ -4,7 +4,7 @@ DEBUG = TEMPLATE_DEBUG = True
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "model-car",
+        "NAME": "pinball-server",
         "USER": "root",
         "PASSWORD": "",
         "HOST": "127.0.0.1",
@@ -16,15 +16,14 @@ DATABASES = {
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "model-car",
+        "NAME": "pinball-server",
         "USER": "root",
         "PASSWORD": "pinball-serverll53757460",
-        "HOST": "54.254.251.44",
+        "HOST": "52.74.181.189",
         "PORT": "3306",
     }
 }
 """
-
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -44,6 +43,3 @@ SECRET_KEY = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxx
 ###############
 
 GEOS_LIBRARY_PATH = 'C:/OSGeo4W/bin/geos_c.dll'
-
-
-HAYSTACK_IP = "http://127.0.0.1:9200"

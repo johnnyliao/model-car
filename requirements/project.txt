@@ -1,11 +1,11 @@
-django==1.6
+django==1.5.5
 grappelli_safe<0.3
 filebrowser-safe<0.3
 Mezzanine==1.4.16
 mysql-python
 south
 
-django-allauth==0.22.0
+django-allauth==0.15.0
 djangorestframework==2.3.9
 django-rest-swagger==0.1.11
 coverage
@@ -26,3 +26,5 @@ django-celery==3.1.10
 sockjs-tornado==1.0.1
 tornado==3.2.2
 tornado-redis==2.4.18
+django-salmonella
+boto

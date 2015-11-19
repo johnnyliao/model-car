@@ -18,6 +18,8 @@ SITE_TAGLINE = ""
 # http://mezzanine.jupo.org/docs/configuration.html#default-settings
 
 # Controls the ordering and grouping of the admin menu.
+#
+
 from django.utils.translation import ugettext_lazy as _
 
 ADMIN_MENU_ORDER = (
@@ -210,14 +212,15 @@ ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 # Don't forget to use absolute paths, not relative paths.
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 
+RESOURCE_LOG = os.path.join(PROJECT_ROOT, 'resource_log')
 
+PINBALL_DOWNLOAD_PATH = os.path.join(PROJECT_ROOT, '/pinball_download/'.strip("/"))
 ################
 # APPLICATIONS #
 ################
 
 INSTALLED_APPS = (
     "account",
-
     "rest_framework",
     "rest_framework_swagger",
 
@@ -247,8 +250,6 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
-    #'allauth.socialaccount.providers.twitter',
-    #'allauth.socialaccount.providers.weibo',
     'salmonella',
 )
 
@@ -275,6 +276,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 # these middleware classes will be applied in the order given, and in the
 # response phase the middleware will be applied in reverse order.
 MIDDLEWARE_CLASSES = (
+    "account.disable.DisableCSRF",
+
     "mezzanine.core.middleware.UpdateCacheMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -305,7 +308,7 @@ PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
 ##################
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
     'PAGINATE_BY': 10
 }
 
@@ -438,9 +441,16 @@ SOCIALACCOUNT_AUTO_SIGNUP = True
 """
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
-    'SCOPE': ['user_friends', 'public_profile', 'email', 'user_about_me'],
-    'METHOD': 'oauth2',  # instead of 'oauth2'
-    'VERSION': 'v2.5'
-}}
+        'SCOPE': ['user_friends','public_profile','email','user_about_me'],
+        'METHOD': 'oauth2',  # instead of 'oauth2'
+        'VERSION': 'v2.5'
+    }
+}
 """
 LOGIN_REDIRECT_URL = '/admin'
+
+
+#AWS S3 setting
+#AWS_ACCESS_KEY_ID = 'AKIAIH7KJ5XX7DOY2ULQ'
+#AWS_SECRET_ACCESS_KEY = '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'
+
