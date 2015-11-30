@@ -1,6 +1,6 @@
 
 DEBUG = TEMPLATE_DEBUG = True
-
+"""
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
@@ -11,19 +11,19 @@ DATABASES = {
         "PORT": "",
     }
 }
-
 """
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "model-car",
         "USER": "root",
-        "PASSWORD": "pinball-serverll53757460",
-        "HOST": "54.254.251.44",
+        "PASSWORD": "liao12345",
+        "HOST": "localhost",
         "PORT": "3306",
     }
 }
-"""
+
 
 
 # Make this unique, and don't share it with anybody.
